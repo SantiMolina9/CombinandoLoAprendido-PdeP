@@ -17,6 +17,7 @@ function tareasMenu() {
       break;
     case "3":
       //Falta implementar
+      //TEXTO DE PRUEBA
       break;
     case "4":
       //Falta implementar
