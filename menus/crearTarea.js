@@ -1,4 +1,4 @@
-const Tarea = require('./Tarea');
+const Tarea = require('../Tarea');
 const prompt = require("prompt-sync")();
 
 function crearTarea() {
