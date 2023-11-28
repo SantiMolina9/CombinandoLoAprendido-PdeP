@@ -9,7 +9,7 @@ function tareasMenu() {
   switch (opcion) {
     case "1":
       //falta implementar
-      //dasdsadsa
+      //dasd
       break;
     case "2":
       //falta implementar
