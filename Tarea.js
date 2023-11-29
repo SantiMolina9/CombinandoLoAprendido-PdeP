@@ -39,7 +39,11 @@ class Tarea {
     }
 
     setEstado(estado) {
-      this._estado = estado;
+      if (["pendiente", "en curso", "terminado", "cancelado"].includes(estado)) {
+        this._estado = estado;
+    } else {
+        console.log("Estado no válido. No se realizó ninguna modificación.");
+    }
     }
 
     getDificultad() {
@@ -47,7 +51,12 @@ class Tarea {
     }
 
     setDificultad(dificultad) {
-      this._dificultad = dificultad;
+      if (["facil", "intermedio", "dificil"].includes(dificultad)) {
+        this._dificultad = dificultad;
+    } else {
+        console.log("Dificultad no válida. No se pudo insertar, por defecto: Facil");
+        this._dificultad = "facil";
+    }
     }
 
     getFechaCreacion() {
