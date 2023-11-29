@@ -1,7 +1,23 @@
 const prompt = require("prompt-sync")();
 let readline = require("readline");
-const tarea = require("../Tarea");
+const Tarea = require("../Tarea");
 
+function mostrarTareasPorFiltro(estado) {
+  const { arrayTareas } = require("./principal");
+  const tareasFiltradas = arrayTareas.filter((T) => T.estado === estado);
+  if (tareasFiltradas.length > 0) {
+    // Itera sobre las tareas filtradas y muestra sus atributos
+    tareasFiltradas.forEach(function (tarea) {
+      console.log(`Titulo: ${tarea.getTitulo()}`);
+      console.log(`Descripcion: ${tarea.getDescripcion()}`);
+      console.log(`Estado: ${tarea.getEstado()}`);
+      console.log(`Dificultad: ${tarea.getDificultad()}`);
+      console.log(`Fecha de Creacion: ${tarea.getFechaCreacion()}`);
+      console.log(`Fecha de Vencimiento: ${tarea.getFechaVencimiento()}`);
+      console.log("--------------");
+    });
+  }
+}
 function tareasMenu() {
   console.log("Presione 1 para ver todas las tareas \n");
   console.log("Presione 2 para ver las tareas pendientes \n");
@@ -13,15 +29,14 @@ function tareasMenu() {
       //Falta implementar
       break;
     case "2":
-      //Falta implementar
+      mostrarTareasPorFiltro("Pendientes");
       break;
     case "3":
       //Falta implementar
-      //TEXTO DE PRUEBA
-      //SEGUNDA PRUEBA
       break;
     case "4":
       //Falta implementar
       break;
   }
 }
+module.exports = { tareasMenu, mostrarTareasPorFiltro };
