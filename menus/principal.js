@@ -16,7 +16,11 @@ function menuPrincipal() {
     option = prompt("Ingrese una opcion: ");
     switch (option) {
       case "1":
-        tareasMenu();
+        if (arrayTareas) {
+          tareasMenu();
+        } else {
+          console.log('arrayTareas no tiene un valor asignado.');
+        }
         break;
       case "2":
         const nuevaTarea = crear();
