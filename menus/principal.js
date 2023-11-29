@@ -2,9 +2,9 @@ const readline = require("readline");
 const prompt = require("prompt-sync")();
 const Tarea = require("../Tarea");
 const crear = require("./crearTarea");
-
+const { tareasMenu, mostrarTareasPorFiltro } = require("./menuTareas");
+let arrayTareas = [];
 function menuPrincipal() {
-  let arrayTareas = [];
   let option;
   do {
     console.log("Bienvenido al Menú principal \n");
@@ -16,7 +16,7 @@ function menuPrincipal() {
     option = prompt("Ingrese una opcion: ");
     switch (option) {
       case "1":
-        //Falta implementar
+        tareasMenu();
         break;
       case "2":
         const nuevaTarea = crear();
@@ -38,4 +38,4 @@ function menuPrincipal() {
   } while (option != 5);
 }
 
-module.exports = menuPrincipal;
+module.exports = { menuPrincipal, arrayTareas };
