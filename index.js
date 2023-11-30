@@ -1,2 +1,2 @@
-const { menuPrincipal, arrayTareas } = require("./menus/principal");
+const { menuPrincipal } = require("./menus/principal");
 menuPrincipal();

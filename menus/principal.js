@@ -1,9 +1,9 @@
-const readline = require("readline");
 const prompt = require("prompt-sync")();
-const Tarea = require("../Tarea");
-const crear = require("./crearTarea");
-const { tareasMenu, mostrarTareasPorFiltro } = require("./menuTareas");
+const { tareasMenu } = require("./menuTareas");
+const { crearTarea, eliminarTarea , modificarTarea } = require("./ABM");
 let arrayTareas = [];
+//Paradigma Estructurado
+//Funcion impura
 function menuPrincipal() {
   let option;
   do {
@@ -16,21 +16,17 @@ function menuPrincipal() {
     option = prompt("Ingrese una opcion: ");
     switch (option) {
       case "1":
-        if (arrayTareas) {
-          tareasMenu();
-        } else {
-          console.log('arrayTareas no tiene un valor asignado.');
-        }
+        tareasMenu();
         break;
       case "2":
-        const nuevaTarea = crear();
+        const nuevaTarea = crearTarea();
         arrayTareas.push(nuevaTarea);
         break;
       case "3":
-        //Falta implementar
+        modificarTarea();
         break;
       case "4":
-        //Falta implementar
+        eliminarTarea();
         break;
       case "5":
         console.log("Saliendo...");
