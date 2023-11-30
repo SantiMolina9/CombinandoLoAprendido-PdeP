@@ -1,3 +1,4 @@
+//Paradigma Orientado a Objetos
 class Tarea {
 
     constructor(titulo, descripcion, estado, dificultad, fechaCreacion, fechaVencimiento) {
@@ -7,15 +8,6 @@ class Tarea {
       this._dificultad = dificultad;
       this._fechaCreacion = fechaCreacion;
       this._fechaVencimiento = fechaVencimiento;
-    }
-
-    mostrarInfo() {
-      console.log(`Titulo: ${this.getTitulo}`);
-      console.log(`Descripcion: ${this.getDescripcion}`);
-      console.log(`Estado: ${this.getEstado}`);
-      console.log(`Dificultad: ${this.getDificultad}`);
-      console.log(`Fecha de Creacion: ${this.getFechaCreacion}`);
-      console.log(`Fecha de Vencimiento: ${this.getFechaVencimiento}`);
     }
 
     getTitulo() {
@@ -37,9 +29,9 @@ class Tarea {
     getEstado() {
       return this._estado;
     }
-
+    //Funcion Pura (Restringido por el Paradigma POO)
     setEstado(estado) {
-      if (["pendiente", "en curso", "terminado", "cancelado"].includes(estado)) {
+      if (["pendiente", "en curso", "terminado"].includes(estado)) {
         this._estado = estado;
     } else {
         console.log("Estado no válido. No se realizó ninguna modificación.");
@@ -49,7 +41,7 @@ class Tarea {
     getDificultad() {
       return this._dificultad;
     }
-
+    //Funcion Pura (Restringido por el Paradigma POO)
     setDificultad(dificultad) {
       if (["facil", "intermedio", "dificil"].includes(dificultad)) {
         this._dificultad = dificultad;
