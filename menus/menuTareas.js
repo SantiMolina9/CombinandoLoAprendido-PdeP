@@ -15,7 +15,7 @@ function mostrarTareasPorFiltro(estado) {
       console.log(`Fecha de Vencimiento: ${tarea.getFechaVencimiento()}`);
       console.log("--------------");
     });
-  }else{
+  } else {
     console.log(`No hay tareas ${estado} cargadas`);
   }
 }
@@ -32,15 +32,18 @@ function tareasMenu() {
       //Funcion impura
       if (arrayTareas.length > 0) {
         arrayTareas.forEach(function (tarea) {
+          const fechaCreacionFormateada = new Date(
+            tarea.getFechaCreacion()
+          ).toLocaleDateString();
           console.log(`Titulo: ${tarea.getTitulo()}`);
           console.log(`Descripcion: ${tarea.getDescripcion()}`);
           console.log(`Estado: ${tarea.getEstado()}`);
           console.log(`Dificultad: ${tarea.getDificultad()}`);
-          console.log(`Fecha de Creacion: ${tarea.getFechaCreacion()}`);
+          console.log(`Fecha de Creacion: ${fechaCreacionFormateada}`);
           console.log(`Fecha de Vencimiento: ${tarea.getFechaVencimiento()}`);
           console.log("--------------");
         });
-      }else{
+      } else {
         console.log(`No hay tareas cargadas`);
       }
       break;
